@@ -10,6 +10,13 @@ Rails.application.routes.draw do
     namespace 'v1' do
       resources :posts
       resources :histories
+      resources :jobs
+      resources :licenses
+      resources :portfolios
+      resources :front_skills
+      resources :back_skills
+      resources :infra_skills
+      resources :other_skills
     end
   end
 end

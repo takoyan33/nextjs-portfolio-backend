@@ -10,14 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_11_17_130619) do
+ActiveRecord::Schema[7.1].define(version: 2024_11_23_023702) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "back_skills", force: :cascade do |t|
+    t.string "name"
+    t.string "rank"
+    t.string "tag"
+    t.string "about"
+    t.string "icon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "front_skills", force: :cascade do |t|
+    t.string "name"
+    t.string "rank"
+    t.string "tag"
+    t.string "about"
+    t.string "icon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "histories", force: :cascade do |t|
     t.string "title"
     t.string "date"
     t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "infra_skills", force: :cascade do |t|
+    t.string "name"
+    t.string "rank"
+    t.string "tag"
+    t.string "about"
+    t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,6 +63,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_17_130619) do
   create_table "licenses", force: :cascade do |t|
     t.string "title"
     t.string "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "other_skills", force: :cascade do |t|
+    t.string "name"
+    t.string "rank"
+    t.string "tag"
+    t.string "about"
+    t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
