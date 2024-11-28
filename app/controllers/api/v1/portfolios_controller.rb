@@ -13,7 +13,7 @@ module Api
       end
 
       def create
-        portfolio = Portfolio.new(post_params)
+        portfolio = Portfolio.new(portfolio_params)
         if portfolio.save
           render json: { status: 'SUCCESS', data: portfolio }
         else
@@ -27,7 +27,7 @@ module Api
       end
 
       def update
-        if @portfolio.update(post_params)
+        if @portfolio.update(portfolio_params)
           render json: { status: 'SUCCESS', message: 'Updated the portfolio', data: @portfolio }
         else
           render json: { status: 'SUCCESS', message: 'Not updated', data: @portfolio.errors }
@@ -36,11 +36,11 @@ module Api
 
       private
 
-      def set_post
+      def set_portfolio
         @portfolio = Portfolio.find(params[:id])
       end
 
-      def post_params
+      def portfolio_params
         params.require(:portfolio).permit(:title)
       end
     end

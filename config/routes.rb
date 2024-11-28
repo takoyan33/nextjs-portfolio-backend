@@ -8,15 +8,15 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   namespace 'api' do
     namespace 'v1' do
-      resources :posts
-      resources :histories
-      resources :jobs
-      resources :licenses
-      resources :portfolios
-      resources :front_skills
-      resources :back_skills
-      resources :infra_skills
-      resources :other_skills
+      resources :posts, only: [:index]
+      resources :histories, only: [:index]
+      resources :jobs, only: [:index]
+      resources :licenses, only: [:index]
+      resources :portfolios, only: [:show, :index]
+      resources :front_skills, only: [:index]
+      resources :back_skills, only: [:index]
+      resources :infra_skills, only: [:index]
+      resources :other_skills, only: [:index]
     end
   end
 end
